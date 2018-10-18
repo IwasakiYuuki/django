@@ -1,0 +1,20 @@
+{% extends "login/base.html" %}
+
+{% block title %}
+Create an acount
+{% endblock %}
+
+{% block content %}
+<div class="login">
+
+    <h2 class="login-header">Sign up</h2>
+
+    <form class="login-container" method="post" action="">
+        {% csrf_token %}
+        <p>{{ form.login_id }}</p>
+        <p>{{ form.username }}</p>
+        <p>{{ form.password }}</p>
+        <p><input type="submit" value="create an acount"></p>
+    </form>
+</div>
+{% endblock %}
