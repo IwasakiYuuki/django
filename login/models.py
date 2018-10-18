@@ -30,7 +30,6 @@ class User(models.Model):
     password = models.CharField(max_length=20)
     username = models.CharField(max_length=30)
 
-    @property
     def __str__(self):
         return self.login_id
 

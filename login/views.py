@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
+from .models import User
 from . import forms
 
 
@@ -16,6 +17,12 @@ def login(request):
 def create_user(request):
     if request.method == 'POST':
         form = forms.CreateUserForm(request.POST)
+        user = User()
+        user.login_id = form.data['login_id']
+        user.username = form.data['username']
+        user.password = form.data['password']
+        user.save()
+        print(User.objects.all())
         return render(request, 'login/create_user_form.html', {'form': form})
     else:
         form = forms.CreateUserForm()
