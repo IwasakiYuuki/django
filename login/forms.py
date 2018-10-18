@@ -18,13 +18,3 @@ class CreateUserForm(forms.Form):
         password = cldata('password')
         username = cldata('username')
         raise forms.ValidationError('this is in clean()')
-
-    def clean_login_id(self):
-        login_id = self.cleaned_data['login_id']
-        print("aaaaaaa")
-        raise forms.ValidationError('this is test.')
-
-    def clean_password(self):
-        password = self.cleaned_data['password']
-        print('pass')
-        raise forms.ValidationError('this is pass.')
