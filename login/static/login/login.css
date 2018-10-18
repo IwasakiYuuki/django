@@ -5,7 +5,7 @@
  * - changed all IDs to classes
  * - converted all units to pixels and em units
  * - changed all global elements to classes or children of
- *   .login
+ *   .polls
  * - cleaned the syntax to be more consistent
  * - added a lot of spaces that I so hard tried to avoid
  *   a few years ago
@@ -63,12 +63,14 @@ body {
   padding: 12px;
 }
 
-.create-user {
+.create_user {
   text-align: right;
-  font-size: 0.9em;
+  font-size: 0.95em;
+  margin-right: 7px;
+  margin-bottom: 0px;
 }
 
-/* Every row inside .login-container is defined with p tags */
+/* Every row inside .polls-container is defined with p tags */
 .login p {
   padding: 12px;
 }

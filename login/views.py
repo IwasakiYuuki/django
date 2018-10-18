@@ -4,17 +4,22 @@ from django.shortcuts import render
 from . import forms
 
 
-def index(request):
+def login(request):
     if request.method == 'POST':
         form = forms.LoginForm(request.POST)
         return HttpResponse(form.data['login_id'])
     else:
         form = forms.LoginForm()
-        return render(request, 'polls/login_form.html', {'form': form})
+        return render(request, 'login/login_form.html', {'form': form})
 
 
-#def create_user(requet):
-
+def create_user(request):
+    if request.method == 'POST':
+        form = forms.CreateUserForm(request.POST)
+        return render(request, 'login/create_user_form.html', {'form': form})
+    else:
+        form = forms.CreateUserForm()
+        return render(request, 'login/create_user_form.html', {'form': form})
 
 
 def detail(request, question_id):
